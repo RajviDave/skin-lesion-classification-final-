@@ -3,6 +3,16 @@ import os
 # path="PH2Dataset\PH2_DATASET_IMAGES"
 # folders=os.listdir(path)
 
-path1=os.path.join("/home","register","lovely","/etc")
-print(path1)
+path="PH2Dataset/PH2_DATASET_IMAGES"
+destination_path="DATASET"
 
+dermo_path=os.path.join(destination_path,"dermoscopic")
+lesion_path=os.path.join(destination_path,"lesion")
+
+os.makedirs(dermo_path,exist_ok=True)
+os.makedirs(lesion_path,exist_ok=True)
+
+image_folder=os.listdir(path)
+for images in image_folder:
+    for image in image_folder:
+        print(image)
