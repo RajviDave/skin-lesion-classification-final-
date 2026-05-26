@@ -2,5 +2,8 @@
 from pathlib import Path
 
 folder_name = Path("PH2Dataset/PH2_DATASET_IMAGES")
-for folders in folder_name:
-    print(folders)
+
+subfolders = [f for f in folder_name.iterdir() if f.is_dir()]
+
+for folder in subfolders:
+    print(folder.name)
