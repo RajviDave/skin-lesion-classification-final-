@@ -7,4 +7,4 @@ subfolders = [f for f in folder_name.iterdir() if f.is_dir()]
 
 for folder in subfolders:
     print(folder.name)
-    
+
