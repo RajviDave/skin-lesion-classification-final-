@@ -22,8 +22,8 @@ wheels/
 *.egg
 
 # Dataset files (large files)
-Final Dataset.zip
-*.zip
+PH2Dataset
+DATASET
 
 # Jupyter Notebook
 .ipynb_checkpoints

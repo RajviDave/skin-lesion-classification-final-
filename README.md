@@ -1,4 +1,4 @@
-# Skin Lesion Classification
+<!-- # Skin Lesion Classification
 
 This project implements a Convolutional Neural Network (CNN) using PyTorch for classifying skin lesion images into three categories: normal, abnormal, and melanoma.
 
@@ -38,4 +38,4 @@ The CNN model consists of:
 - Softmax output for 3-class classification
 
 ## Author
-Rajvi Dave 
+Rajvi Dave  -->
