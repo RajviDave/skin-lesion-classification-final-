@@ -12,7 +12,3 @@ lesion_path=os.path.join(destination_path,"lesion")
 os.makedirs(dermo_path,exist_ok=True)
 os.makedirs(lesion_path,exist_ok=True)
 
-image_folder=os.listdir(path)
-for images in image_folder:
-    for image in image_folder:
-        print(image)
