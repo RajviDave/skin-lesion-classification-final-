@@ -18,6 +18,3 @@ df['Dots']=Dots
 encoder=OrdinalEncoder(categories=[['T','AT']])
 df['Pigmentation_Encoded']=encoder.fit_transform(df[['Pigment Network\n(AT/T)']])
 
-encoder=OrdinalEncoder(categories=[['A','T','AT']])
-df['Dots_Encoder']=encoder.fit_transform(df[['Dots/Globules\n(A/AT/T)']])
-print(df)
