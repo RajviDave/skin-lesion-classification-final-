@@ -5,16 +5,33 @@ import os
 data=pd.read_excel('PH2Dataset/PH2_dataset.xlsx',skiprows=12)
 
 print(data.columns)
-df=pd.DataFrame(data['Pigment Network\n(AT/T)'])
-Dots=data['Dots/Globules\n(A/AT/T)']
-# Streaks=data['Streaks\n(A/P)']
-# regression_area=data['Regression Areas\n(A/P)']
-# veil=data['Blue-Whitish Veil\n(A/P)']
-df['Dots']=Dots
-# df['Streaks']=Streaks
-# df['Regression']=regression_area
-# df['Veil']=veil
+df=pd.DataFrame()
 
-encoder=OrdinalEncoder(categories=[['T','AT']])
-df['Pigmentation_Encoded']=encoder.fit_transform(df[['Pigment Network\n(AT/T)']])
+df['Pigment']=data['Pigment Network\n(AT/T)']
+df['Dots']=data['Dots/Globules\n(A/AT/T)']
+df['Streaks']=data['Streaks\n(A/P)']
+df['Regression']=data['Regression Areas\n(A/P)']
+df['Veil']=data['Blue-Whitish Veil\n(A/P)']
 
+encoder=OrdinalEncoder(categories=[
+    ['T', 'AT'],        # Pigment
+    ['A', 'T', 'AT'],   # Dots
+    ['A', 'P'],         # Streaks
+    ['A', 'P'],         # Regression
+    ['A', 'P']          # Veil
+])
+
+encoded=encoder.fit_transform(df)
+
+encoded_df = pd.DataFrame(
+    encoded,
+    columns=[
+        'Pigment_Encoded',
+        'Dots_Encoded',
+        'Streaks_Encoded',
+        'Regression_Encoded',
+        'Veil_Encoded'
+    ]
+)
+
+print(encoded_df.head())
