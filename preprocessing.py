@@ -13,9 +13,18 @@ C_N=pd.Series(C_N)
 A_N=pd.Series(A_N)
 M=pd.Series(M)
 
-C_N.dropna()
-A_N.dropna()
-M.dropna()
+C_N=C_N.dropna()
+A_N=A_N.dropna()
+M=M.dropna()
 
+C_N=C_N.replace('X','Common Nevus')
+A_N=A_N.replace('X','Atypical Nevus')
+M=M.replace('X','Melanoma')
 
+C_N=C_N.tolist()
+A_N=A_N.tolist()
+M=M.tolist()
+print(type(M))
 
+C_N.append(M)
+print(C_N)
