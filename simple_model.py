@@ -34,4 +34,4 @@ encoded_df = pd.DataFrame(
     ]
 )
 
-print(encoded_df.head())
+print(encoded_df)
