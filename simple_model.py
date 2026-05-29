@@ -18,3 +18,4 @@ df=pd.DataFrame(data['Pigment Network\n(AT/T)'])
 encoder=OrdinalEncoder(categories=[['T','AT']])
 df['Pigmentation_Encoded']=encoder.fit_transform(df[['Pigment Network\n(AT/T)']])
 print(df)
+
