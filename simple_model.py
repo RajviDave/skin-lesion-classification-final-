@@ -23,7 +23,7 @@ encoder=OrdinalEncoder(categories=[
 
 encoded=encoder.fit_transform(df)
 
-encoded_df = pd.DataFrame(
+encoded_dataframe = pd.DataFrame(
     encoded,
     columns=[
         'Pigment_Encoded',
@@ -34,4 +34,4 @@ encoded_df = pd.DataFrame(
     ]
 )
 
-print(encoded_df)
+# print(encoded_d
