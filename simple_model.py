@@ -34,4 +34,4 @@ encoded_dataframe = pd.DataFrame(
     ]
 )
 
-# print(encoded_d
+print(encoded_dataframe)
