@@ -37,3 +37,4 @@ encoded_dataframe = pd.DataFrame(
 print(encoded_dataframe)
 
 print("Encoder is working ")
+print("Simple model done")
