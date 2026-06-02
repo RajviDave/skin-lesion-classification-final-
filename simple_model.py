@@ -35,5 +35,5 @@ encoded_dataframe = pd.DataFrame(
 )
 
 print(encoded_dataframe)
-
+print(encoded_dataframe.columns)
 
