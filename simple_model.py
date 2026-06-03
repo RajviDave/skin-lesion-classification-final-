@@ -34,6 +34,4 @@ encoded_dataframe = pd.DataFrame(
     ]
 )
 
-print(encoded_dataframe)
-print(encoded_dataframe.columns)
-
+print(encoded_dataframe['Pigment_Encoded'])
