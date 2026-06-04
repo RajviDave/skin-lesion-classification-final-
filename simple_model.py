@@ -34,6 +34,6 @@ encoded_dataframe = pd.DataFrame(
         'Veil_Encoded'
     ]
 )
-# encoded_dataframe['Classes']=C_N
+encoded_dataframe['Classes']=C_N
 
-print(len(encoded_dataframe))
+print(encoded_dataframe)

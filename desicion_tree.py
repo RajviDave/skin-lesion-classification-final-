@@ -5,5 +5,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from simple_model import encoded_dataframe
 
-
+X=encoded_dataframe.iloc[:3].values
+print(X)
 
