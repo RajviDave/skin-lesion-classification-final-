@@ -4,6 +4,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from simple_model import encoded_dataframe
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 
 X=pd.DataFrame()
 X[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]=encoded_dataframe[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]
@@ -25,3 +27,7 @@ clf_gini=DecisionTreeClassifier(criterion="gini",random_state=100,max_depth=4,mi
 clf_gini.fit(X_train,Y_train)
 y_pred = clf_gini.predict(X_test)
 print(y_pred)
+
+accuracy = accuracy_score(Y_test, y_pred)
+print("Accuracy:", accuracy)
+print(confusion_matrix(Y_test, y_pred))
