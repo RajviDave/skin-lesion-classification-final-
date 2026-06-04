@@ -1,8 +1,4 @@
-from sklearn.tree import DecisionTreeClassifier
-from sklearn import tree
 import matplotlib.pyplot as plt
-from simple_model import encoded_dataframe
+import numpy as np
+import pandas as pd
 
-
-model=DecisionTreeClassifier()
-model.fit()
