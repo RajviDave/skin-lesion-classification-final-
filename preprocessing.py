@@ -24,7 +24,7 @@ M=M.replace('X','Melanoma')
 C_N=C_N.tolist()
 A_N=A_N.tolist()
 M=M.tolist()
-print(type(M))
 
+C_N.append(A_N)
 C_N.append(M)
 print(C_N)

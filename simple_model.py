@@ -1,6 +1,7 @@
 from sklearn.preprocessing import OrdinalEncoder
 import pandas as pd
 import os
+from preprocessing import C_N
 
 data=pd.read_excel('PH2Dataset/PH2_dataset.xlsx',skiprows=12)
 
@@ -33,5 +34,6 @@ encoded_dataframe = pd.DataFrame(
         'Veil_Encoded'
     ]
 )
+# encoded_dataframe['Classes']=C_N
 
-print(encoded_dataframe)
+print(len(encoded_dataframe))
