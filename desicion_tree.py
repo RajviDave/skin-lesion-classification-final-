@@ -58,3 +58,4 @@ test_pred = clf_gini.predict(X_test)
 
 print("Train Accuracy:", accuracy_score(Y_train, train_pred))
 print("Test Accuracy:", accuracy_score(Y_test, test_pred))
+
