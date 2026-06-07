@@ -25,3 +25,11 @@ scores = cross_val_score(svm_model, X, Y.values.ravel(), cv=5)
 
 print("CV Scores:", scores)
 print("Mean CV Accuracy:", scores.mean())
+
+train_pred = svm_model.predict(X_train)
+
+train_acc = accuracy_score(Y_train, train_pred)
+test_acc = accuracy_score(Y_test, y_pred)
+
+print("Train Accuracy:", train_acc)
+print("Test Accuracy:", test_acc)
