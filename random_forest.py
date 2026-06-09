@@ -14,3 +14,6 @@ rf_model = RandomForestClassifier(
 
 # Train
 rf_model.fit(X_train, Y_train.values.ravel())
+
+# Predict
+y_pred = rf_model.predict(X_test)
