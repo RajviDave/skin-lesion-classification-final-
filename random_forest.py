@@ -17,3 +17,7 @@ rf_model.fit(X_train, Y_train.values.ravel())
 
 # Predict
 y_pred = rf_model.predict(X_test)
+
+# Accuracy
+accuracy = accuracy_score(Y_test, y_pred)
+print("Test Accuracy:", accuracy)
