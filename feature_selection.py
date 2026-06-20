@@ -18,10 +18,13 @@ data["Regression Areas\n(A/P)"]=np.where(data["Regression Areas\n(A/P)"]=="A",0,
 data["Blue-Whitish Veil\n(A/P)"]=np.where(data["Blue-Whitish Veil\n(A/P)"]=="A",0,1)
 # print(data["Blue-Whitish Veil\n(A/P)"])
 
-data = pd.DataFrame({'Size': ['A', 'AT', 'T']})
-encoder = OrdinalEncoder(categories=[['A', 'AT', 'T']])
+data_frame={"Size":data["Dots/Globules\n(A/AT/T)"]}
+df = pd.DataFrame(data_frame)
+size_mapping = {
+    'A': -1,
+    'AT': 0,
+    'T': 1
+}
 
-data['Dots/Globules\n(A/AT/T)'] = encoder.fit_transform(data[['Size']])
-# print(data['Dots/Globules\n(A/AT/T)'])
-
-print(data.head())
+df['Size_Encoded'] = df['Size'].map(size_mapping)
+print(df["Size_Encoded"])
