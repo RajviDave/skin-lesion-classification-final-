@@ -1,9 +1,10 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 from preprocessing import data
 from preprocessing import C_N
+from sklearn.preprocessing import OrdinalEncoder
 # print(C_N)
-print(data.columns)
+# print(data.columns)
 
 data["Pigment Network\n(AT/T)"]=np.where(data["Pigment Network\n(AT/T)"]=="AT",0,1)
 # print(data["Pigment Network\n(AT/T)"])
@@ -16,3 +17,11 @@ data["Regression Areas\n(A/P)"]=np.where(data["Regression Areas\n(A/P)"]=="A",0,
 
 data["Blue-Whitish Veil\n(A/P)"]=np.where(data["Blue-Whitish Veil\n(A/P)"]=="A",0,1)
 # print(data["Blue-Whitish Veil\n(A/P)"])
+
+data = pd.DataFrame({'Size': ['A', 'AT', 'T']})
+encoder = OrdinalEncoder(categories=[['A', 'AT', 'T']])
+
+data['Dots/Globules\n(A/AT/T)'] = encoder.fit_transform(data[['Size']])
+# print(data['Dots/Globules\n(A/AT/T)'])
+
+print(data.head())
