@@ -28,3 +28,11 @@ size_mapping = {
 
 df['Size_Encoded'] = df['Size'].map(size_mapping)
 print(df["Size_Encoded"])
+df['lesion']=C_N
+df['pigment_network']=data["Pigment Network\n(AT/T)"]
+df['streaks']=data["Streaks\n(A/P)"]
+df['regression_area']=data["Regression Areas\n(A/P)"]
+df['blue_white_veil']=data["Blue-Whitish Veil\n(A/P)"]
+df=df.drop(columns=['Size'])
+print(df)
+
