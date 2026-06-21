@@ -7,6 +7,8 @@ from simple_model import encoded_dataframe
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import cross_val_score
+from sklearn.tree import plot_tree
+
 
 X=pd.DataFrame()
 X[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]=encoded_dataframe[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]
@@ -56,6 +58,15 @@ scores = cross_val_score(clf_gini, X, Y, cv=5)
 train_pred = clf_gini.predict(X_train)
 test_pred = clf_gini.predict(X_test)
 
-print("Train Accuracy:", accuracy_score(Y_train, train_pred))
-print("Test Accuracy:", accuracy_score(Y_test, test_pred))
+# print("Train Accuracy:", accuracy_score(Y_train, train_pred))
+# print("Test Accuracy:", accuracy_score(Y_test, test_pred))
 
+plt.figure(figsize=(15,8))
+plot_tree(
+    clf_gini,
+    feature_names=X.columns,
+    class_names=['Common Nevus','Atypical Nevus','Melanoma'],  # replace with actual class names
+    filled=True,
+    rounded=True
+)
+plt.show()
