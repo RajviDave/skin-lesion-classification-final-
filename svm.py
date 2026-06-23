@@ -5,7 +5,7 @@ from desicion_tree import X_train,Y_train,X_test,Y_test,X,Y
 
 # Create SVM model
 svm_model = SVC(
-    kernel='rbf',      # 'linear', 'poly', 'rbf'
+    kernel='poly',      # 'linear', 'poly', 'rbf'
     C=1.0,
     gamma='scale',
     random_state=100
@@ -31,5 +31,5 @@ train_pred = svm_model.predict(X_train)
 train_acc = accuracy_score(Y_train, train_pred)
 test_acc = accuracy_score(Y_test, y_pred)
 
-print("Train Accuracy:", train_acc)
-print("Test Accuracy:", test_acc)
+print("Train Accuracy SVM:", train_acc)
+print("Test Accuracy SVM:", test_acc)
