@@ -18,7 +18,7 @@ Y[['Classes']]=encoded_dataframe[['Classes']]
 # print(len(Y[['Classes']]))
 # print(Y)
 
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.30,random_state=50)
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.20,random_state=50)
 # print(len(X_train))
 # print(len(Y_train))
 # print(len(X_test))
