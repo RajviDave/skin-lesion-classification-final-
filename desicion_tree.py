@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -58,15 +57,15 @@ scores = cross_val_score(clf_gini, X, Y, cv=5)
 train_pred = clf_gini.predict(X_train)
 test_pred = clf_gini.predict(X_test)
 
-# print("Train Accuracy:", accuracy_score(Y_train, train_pred))
-# print("Test Accuracy:", accuracy_score(Y_test, test_pred))
+print("Train Accuracy:", accuracy_score(Y_train, train_pred))
+print("Test Accuracy:", accuracy_score(Y_test, test_pred))
 
-plt.figure(figsize=(15,8))
-plot_tree(
-    clf_gini,
-    feature_names=X.columns,
-    class_names=['Common Nevus','Atypical Nevus','Melanoma'],  # replace with actual class names
-    filled=True,
-    rounded=True
-)
-plt.show()
+# plt.figure(figsize=(15,8))
+# plot_tree(
+#     clf_gini,
+#     feature_names=X.columns,
+#     class_names=['Common Nevus','Atypical Nevus','Melanoma'],  # replace with actual class names
+#     filled=True,
+#     rounded=True
+# )
+# plt.show()
