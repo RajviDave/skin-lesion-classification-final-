@@ -18,14 +18,14 @@ Y[['Classes']]=encoded_dataframe[['Classes']]
 # print(len(Y[['Classes']]))
 # print(Y)
 
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.25,random_state=42)
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.30,random_state=50)
 # print(len(X_train))
 # print(len(Y_train))
 # print(len(X_test))
 # print(len(Y_test))
 
 #train desicion tree using gini
-clf_gini=DecisionTreeClassifier(criterion="gini",random_state=42,max_depth=5,min_samples_leaf=5)
+clf_gini=DecisionTreeClassifier(criterion="gini",random_state=50,max_depth=5,min_samples_leaf=5)
 clf_gini.fit(X_train,Y_train)
 # y_pred = clf_gini.predict(X_test)
 # print(y_pred)
