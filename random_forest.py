@@ -5,7 +5,7 @@ from desicion_tree import X_test,X_train,Y_test,Y_train
 
 # Create Random Forest model
 rf_model = RandomForestClassifier(
-    n_estimators=25,      # number of trees
+    n_estimators=20,      # number of trees
     criterion='gini',
     max_depth=3,           # can also try None
     min_samples_leaf=3,
