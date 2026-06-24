@@ -13,20 +13,20 @@ X=pd.DataFrame()
 X[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]=encoded_dataframe[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]
 # print(X)
 
-Y=pd.DataFrame()
-Y[['Classes']]=encoded_dataframe[['Classes']]
+# Y=pd.DataFrame()
+# Y[['Classes']]=encoded_dataframe[['Classes']]
 # print(len(Y[['Classes']]))
 # print(Y)
 
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.20,random_state=50)
-# print(len(X_train))
-# print(len(Y_train))
-# print(len(X_test))
-# print(len(Y_test))
+X_train,X_test,Y_train,Y_test=train_test_split(X,encoded_dataframe[['Classes']],test_size=0.20,random_state=50)
+#print(X_train)
+#print(Y_train)
+#print(X_test)
+#print("the Y test",Y_test)
 
 #train desicion tree using gini
-clf_gini=DecisionTreeClassifier(criterion="gini",random_state=50,max_depth=5,min_samples_leaf=5)
-clf_gini.fit(X_train,Y_train)
+# clf_gini=DecisionTreeClassifier(criterion="gini",random_state=50,max_depth=5,min_samples_leaf=5)
+# clf_gini.fit(X_train,Y_train)
 # y_pred = clf_gini.predict(X_test)
 # print(y_pred)
 
@@ -35,13 +35,13 @@ clf_gini.fit(X_train,Y_train)
 # print(confusion_matrix(Y_test, y_pred))
 
 # Predictions on training data
-y_train_pred = clf_gini.predict(X_train)
+# y_train_pred = clf_gini.predict(X_train)
 
 # Predictions on testing data
-y_test_pred = clf_gini.predict(X_test)
+#y_test_pred = clf_gini.predict(X_test)
 
-train_acc = accuracy_score(Y_train, y_train_pred)
-test_acc = accuracy_score(Y_test, y_test_pred)
+#train_acc = accuracy_score(Y_train, y_train_pred)
+#test_acc = accuracy_score(Y_test, y_test_pred)
 
 # print("Training Accuracy:", train_acc)
 # print("Testing Accuracy :", test_acc)
@@ -49,16 +49,16 @@ test_acc = accuracy_score(Y_test, y_test_pred)
 # print("Tree Depth:", clf_gini.get_depth())
 # print("Leaves:", clf_gini.get_n_leaves())
 
-scores = cross_val_score(clf_gini, X, Y, cv=5)
+#scores = cross_val_score(clf_gini, X, Y, cv=5)
 
 # print(scores)
 # print("Mean Accuracy:", scores.mean())
 
-train_pred = clf_gini.predict(X_train)
-test_pred = clf_gini.predict(X_test)
+#train_pred = clf_gini.predict(X_train)
+#test_pred = clf_gini.predict(X_test)
 
-print("Train Accuracy:", accuracy_score(Y_train, train_pred))
-print("Test Accuracy:", accuracy_score(Y_test, test_pred))
+#print("Train Accuracy:", accuracy_score(Y_train, train_pred))
+#print("Test Accuracy:", accuracy_score(Y_test, test_pred))
 
 # plt.figure(figsize=(15,8))
 # plot_tree(
