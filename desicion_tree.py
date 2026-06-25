@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import cross_val_score
 from sklearn.tree import plot_tree
+from sklearn.metrics import f1_score
 
 
 X=pd.DataFrame()
@@ -25,10 +26,14 @@ X_train,X_test,Y_train,Y_test=train_test_split(X,encoded_dataframe[['Classes']],
 #print("the Y test",Y_test)
 
 #train desicion tree using gini
-# clf_gini=DecisionTreeClassifier(criterion="gini",random_state=50,max_depth=5,min_samples_leaf=5)
-# clf_gini.fit(X_train,Y_train)
-# y_pred = clf_gini.predict(X_test)
+clf_gini=DecisionTreeClassifier(criterion="gini",random_state=50,max_depth=5,min_samples_leaf=5)
+clf_gini.fit(X_train,Y_train)
+#prediction on test data
+y_pred = clf_gini.predict(X_test)
 # print(y_pred)
+
+f1 = f1_score(Y_test, y_pred, average='weighted')
+print("Weighted F1 Score:", f1)
 
 # accuracy = accuracy_score(Y_test, y_pred)
 # print("Accuracy:", accuracy)
@@ -36,9 +41,6 @@ X_train,X_test,Y_train,Y_test=train_test_split(X,encoded_dataframe[['Classes']],
 
 # Predictions on training data
 # y_train_pred = clf_gini.predict(X_train)
-
-# Predictions on testing data
-#y_test_pred = clf_gini.predict(X_test)
 
 #train_acc = accuracy_score(Y_train, y_train_pred)
 #test_acc = accuracy_score(Y_test, y_test_pred)
