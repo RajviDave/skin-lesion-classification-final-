@@ -1,7 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import cross_val_score
-from desicion_tree import X_test,X_train,Y_test,Y_train
+from decision_tree import X_test,X_train,Y_test,Y_train
 
 # Create Random Forest model
 rf_model = RandomForestClassifier(

@@ -1,7 +1,7 @@
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import cross_val_score
-from desicion_tree import X_train,Y_train,X_test,Y_test,X,Y
+from decision_tree import X_train,Y_train,X_test,Y_test,X,Y
 
 # Create SVM model
 svm_model = SVC(
