@@ -1,5 +1,5 @@
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix,f1_score
 from sklearn.model_selection import cross_val_score
 from decision_tree import X_test,X_train,Y_test,Y_train
 
@@ -25,3 +25,6 @@ print("Test Accuracy:", accuracy)
 
 test_accuracy=accuracy_score(Y_train,y_train_pred)
 print("Training accuracy:",test_accuracy)
+
+f1 = f1_score(Y_test, y_pred, average='weighted')
+print("Weighted F1 Score:", f1)
