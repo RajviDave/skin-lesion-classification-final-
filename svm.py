@@ -1,5 +1,5 @@
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report,f1_score
 from sklearn.model_selection import cross_val_score
 from decision_tree import X_train,Y_train,X_test,Y_test,X,Y
 
@@ -33,3 +33,6 @@ test_acc = accuracy_score(Y_test, y_pred)
 
 print("Train Accuracy SVM:", train_acc)
 print("Test Accuracy SVM:", test_acc)
+
+f1 = f1_score(Y_test, y_pred, average='weighted')
+print("Weighted F1 Score:", f1)
