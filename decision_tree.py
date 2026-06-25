@@ -14,8 +14,8 @@ X=pd.DataFrame()
 X[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]=encoded_dataframe[['Pigment_Encoded','Dots_Encoded','Streaks_Encoded','Regression_Encoded','Veil_Encoded']]
 # print(X)
 
-# Y=pd.DataFrame()
-# Y[['Classes']]=encoded_dataframe[['Classes']]
+Y=pd.DataFrame()
+Y[['Classes']]=encoded_dataframe[['Classes']]
 # print(len(Y[['Classes']]))
 # print(Y)
 
